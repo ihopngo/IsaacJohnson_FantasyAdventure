@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cctgo4u2hhwij"]
+
+[ext_resource type="Texture2D" uid="uid://ukq7e8d22bmm" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Backgrounds/BG_08.png" id="1_at5dx"]
+
+[node name="MainGameLevel" type="Node2D" unique_id=1152686869]
+
+[node name="LevelBackground" type="Sprite2D" parent="." unique_id=2108290197]
+position = Vector2(576, 324)
+scale = Vector2(0.7892157, 0.7892157)
+texture = ExtResource("1_at5dx")

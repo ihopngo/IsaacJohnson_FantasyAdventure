@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1pqxqmmc64hj"
+path="res://.godot/imported/alex-morgan-fantasy-adventure-quest-.mp3-17c843519ad04168ff0f319c2fcefbe9.mp3str"
+
+[deps]
+
+source_file="res://Johnson_Isaac_Fantasy Adventure/assets/audio/alex-morgan-fantasy-adventure-quest-.mp3"
+dest_files=["res://.godot/imported/alex-morgan-fantasy-adventure-quest-.mp3-17c843519ad04168ff0f319c2fcefbe9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

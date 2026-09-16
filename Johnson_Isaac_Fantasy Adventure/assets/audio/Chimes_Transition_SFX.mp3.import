@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhne5hould2mu"
+path="res://.godot/imported/Chimes_Transition_SFX.mp3-e060b0645a0ec8341516b86066831d48.mp3str"
+
+[deps]
+
+source_file="res://Johnson_Isaac_Fantasy Adventure/assets/audio/Chimes_Transition_SFX.mp3"
+dest_files=["res://.godot/imported/Chimes_Transition_SFX.mp3-e060b0645a0ec8341516b86066831d48.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfq1ofpej8trm"
+path="res://.godot/imported/jorisvermeer-mysterious-fairytale-journey.mp3-a8fe5e7399965efbe400f095521be610.mp3str"
+
+[deps]
+
+source_file="res://Johnson_Isaac_Fantasy Adventure/assets/audio/jorisvermeer-mysterious-fairytale-journey.mp3"
+dest_files=["res://.godot/imported/jorisvermeer-mysterious-fairytale-journey.mp3-a8fe5e7399965efbe400f095521be610.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
