@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1cc4o2idycsp"
+path="res://.godot/imported/Swoosh_SFX.mp3-58d8ba063b17d0362cae6f2238ef4f76.mp3str"
+
+[deps]
+
+source_file="res://Johnson_Isaac_Fantasy Adventure/assets/audio/Swoosh_SFX.mp3"
+dest_files=["res://.godot/imported/Swoosh_SFX.mp3-58d8ba063b17d0362cae6f2238ef4f76.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
