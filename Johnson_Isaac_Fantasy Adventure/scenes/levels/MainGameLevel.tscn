@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://cctgo4u2hhwij"]
 
+[ext_resource type="Script" uid="uid://vyqwhty74eu" path="res://Johnson_Isaac_Fantasy Adventure/scripts/main_game_level.gd" id="1_52vu7"]
 [ext_resource type="Texture2D" uid="uid://ukq7e8d22bmm" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Backgrounds/BG_08.png" id="1_at5dx"]
+[ext_resource type="AudioStream" uid="uid://cfq1ofpej8trm" path="res://Johnson_Isaac_Fantasy Adventure/assets/audio/jorisvermeer-mysterious-fairytale-journey.mp3" id="3_52vu7"]
 
 [node name="MainGameLevel" type="Node2D" unique_id=1152686869]
+script = ExtResource("1_52vu7")
 
 [node name="LevelBackground" type="Sprite2D" parent="." unique_id=2108290197]
 position = Vector2(576, 324)
 scale = Vector2(0.7892157, 0.7892157)
 texture = ExtResource("1_at5dx")
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="." unique_id=1322175394]
+stream = ExtResource("3_52vu7")
+volume_db = -10.0

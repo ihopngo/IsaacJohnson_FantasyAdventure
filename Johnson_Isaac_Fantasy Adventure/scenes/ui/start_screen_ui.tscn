@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://dywhr56xxhhxt"]
 
 [ext_resource type="Texture2D" uid="uid://d3glpf24gcky" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Backgrounds/BG_01_textRect.png" id="1_rkjbu"]
-[ext_resource type="Script" uid="uid://d1ec8ygeupuul" path="res://Johnson_Isaac_Fantasy Adventure/scenes/ui/start_screen_ui.gd" id="1_t15r3"]
+[ext_resource type="Script" uid="uid://d1ec8ygeupuul" path="res://Johnson_Isaac_Fantasy Adventure/scripts/start_screen_ui.gd" id="1_t15r3"]
 [ext_resource type="Texture2D" uid="uid://b5tpvpctah12p" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Badges & Icons/Game Title Logo_transp.png" id="2_t15r3"]
 [ext_resource type="Texture2D" uid="uid://d5lusb100mgp" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Buttons/Button Rect_green_Start_button.png" id="3_dt53i"]
 [ext_resource type="Texture2D" uid="uid://c8eq2de00wb4s" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Buttons/Button Rect_red_Quit_button.png" id="4_rkjbu"]
 [ext_resource type="Texture2D" uid="uid://dclu7rk7j3btk" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Buttons/Start Game_button_text.png" id="5_h7q48"]
 [ext_resource type="Texture2D" uid="uid://d1l3nv6xndqyl" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Buttons/Quit Game_button_text.png" id="7_c4qj7"]
+[ext_resource type="AudioStream" uid="uid://d1cc4o2idycsp" path="res://Johnson_Isaac_Fantasy Adventure/assets/audio/Swoosh_SFX.mp3" id="8_8iwn4"]
+[ext_resource type="Texture2D" uid="uid://bd72cto4x3k3j" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Badges & Icons/Scroll_04Trans.png" id="8_kk3ir"]
+[ext_resource type="Texture2D" uid="uid://d8g6ga62t6kg" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Badges & Icons/Isaac_Johnson_text.png" id="9_8iwn4"]
+[ext_resource type="AudioStream" uid="uid://bhne5hould2mu" path="res://Johnson_Isaac_Fantasy Adventure/assets/audio/Chimes_Transition_SFX.mp3" id="11_l0i5w"]
+[ext_resource type="AudioStream" uid="uid://ddgi87avp318j" path="res://Johnson_Isaac_Fantasy Adventure/assets/audio/Button_Click.mp3" id="12_j6fxu"]
+[ext_resource type="AudioStream" uid="uid://c1pqxqmmc64hj" path="res://Johnson_Isaac_Fantasy Adventure/assets/audio/alex-morgan-fantasy-adventure-quest-.mp3" id="13_v3xpo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lpkyb"]
 texture = ExtResource("3_dt53i")
@@ -55,16 +61,157 @@ tracks/0/path = NodePath("Game_Title_Logo:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1.15, 1.15), Vector2(0.951, 0.951), Vector2(1, 1)]
+"values": [Vector2(1e-05, 1e-05), Vector2(0.6, 0.6), Vector2(0.5, 0.5), Vector2(0.55, 0.55)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Game_Title_Sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 1.515,
+"start_offset": 0.4100001,
+"stream": ExtResource("8_8iwn4")
+}],
+"times": PackedFloat32Array(0.01000008)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dt53i"]
 _data = {
 &"RESET": SubResource("Animation_xfrhc"),
 &"title_bounce": SubResource("Animation_x4td8")
+}
+
+[sub_resource type="Animation" id="Animation_kk3ir"]
+resource_name = "Credits"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scroll:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 1.3, 1.4000001, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.325, 1e-05), Vector2(0.325, 0.4), Vector2(0.325, 0.3), Vector2(0.325, 0.32)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Credits_Sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 2.95,
+"start_offset": 0.0,
+"stream": ExtResource("11_l0i5w")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_8iwn4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scroll:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.325, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0i5w"]
+_data = {
+&"Credits": SubResource("Animation_kk3ir"),
+&"RESET": SubResource("Animation_8iwn4")
+}
+
+[sub_resource type="Animation" id="Animation_v3xpo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5t7gc"]
+resource_name = "Start_Button"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m7y4h"]
+_data = {
+&"RESET": SubResource("Animation_v3xpo"),
+&"Start_Button": SubResource("Animation_5t7gc")
+}
+
+[sub_resource type="Animation" id="Animation_m7y4h"]
+resource_name = "Quit_button"
+length = 1.9000000000000001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Quit_Game_Button:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.90000004, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ioy85"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Quit_Game_Button:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eaf6g"]
+_data = {
+&"Quit_button": SubResource("Animation_m7y4h"),
+&"RESET": SubResource("Animation_ioy85")
 }
 
 [node name="Start_Screen_ui" type="Control" unique_id=1004526199]
@@ -79,9 +226,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Start_Screen_BG_png" type="TextureRect" parent="." unique_id=255353225]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 1.0017362
+anchor_bottom = 0.99691355
 offset_right = -2.0
 offset_bottom = 2.0
 grow_horizontal = 2
@@ -96,49 +243,61 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -571.5
-offset_right = 571.5
-offset_bottom = 460.0
+offset_left = -808.0
+offset_top = -16.0
+offset_right = 335.0
+offset_bottom = 444.0
 grow_horizontal = 2
 scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(575, 325)
 texture = ExtResource("2_t15r3")
 stretch_mode = 5
 
 [node name="Start_Game_Button" type="Button" parent="." unique_id=1211627448]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -382.0
-offset_top = -96.0
-offset_right = -82.0
-offset_bottom = 4.0
+offset_left = -488.0
+offset_top = -98.0
+offset_right = -21.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_lpkyb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ekeme")
 theme_override_styles/hover = SubResource("StyleBoxTexture_w4p2n")
-icon = ExtResource("5_h7q48")
+
+[node name="Start_Text" type="Sprite2D" parent="Start_Game_Button" unique_id=731697046]
+position = Vector2(231.99998, 50)
+scale = Vector2(0.8243243, 0.8243243)
+texture = ExtResource("5_h7q48")
 
 [node name="Quit_Game_Button" type="Button" parent="." unique_id=1175367999]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 90.0
+offset_left = 16.0
 offset_top = -96.0
-offset_right = 390.0
+offset_right = 483.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_f5ghj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fufna")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2r8x5")
-icon = ExtResource("7_c4qj7")
+
+[node name="Quit_Text" type="Sprite2D" parent="Quit_Game_Button" unique_id=448849421]
+position = Vector2(240, 55.999996)
+scale = Vector2(0.8157896, 0.8157896)
+texture = ExtResource("7_c4qj7")
 
 [node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="." unique_id=140070098]
 oversampling_override = 1.0
@@ -149,6 +308,45 @@ dialog_text = "Are you sure you want to quit?"
 [node name="Game_Title_AnimationPlayer" type="AnimationPlayer" parent="." unique_id=3250940]
 libraries/ = SubResource("AnimationLibrary_dt53i")
 autoplay = &"title_bounce"
+
+[node name="Scroll" type="Sprite2D" parent="." unique_id=648487980]
+position = Vector2(936.00006, 376.00003)
+scale = Vector2(0.325, 1e-05)
+texture = ExtResource("8_kk3ir")
+
+[node name="Credits" type="Sprite2D" parent="Scroll" unique_id=1941849485]
+position = Vector2(-0.0002593994, 55.019165)
+scale = Vector2(1.4934453, 1.4934454)
+texture = ExtResource("9_8iwn4")
+
+[node name="Credits_AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1159309042]
+libraries/ = SubResource("AnimationLibrary_l0i5w")
+autoplay = &"Credits"
+
+[node name="Game_Title_Sound" type="AudioStreamPlayer2D" parent="." unique_id=1130381652]
+position = Vector2(192, 192)
+
+[node name="Credits_Sound" type="AudioStreamPlayer2D" parent="." unique_id=623182914]
+position = Vector2(192, 192)
+volume_db = -3.0
+
+[node name="Button_Sound" type="AudioStreamPlayer" parent="." unique_id=1516827595]
+stream = ExtResource("12_j6fxu")
+volume_db = -10.0
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="." unique_id=1037475349]
+stream = ExtResource("13_v3xpo")
+volume_db = -10.0
+
+[node name="Start_Button_AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1554611162]
+root_node = NodePath("../Start_Game_Button/Start_Text")
+libraries/ = SubResource("AnimationLibrary_m7y4h")
+autoplay = &"Start_Button"
+
+[node name="Quit_Button_AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2116305524]
+root_node = NodePath("../Start_Button_AnimationPlayer")
+libraries/ = SubResource("AnimationLibrary_eaf6g")
+autoplay = &"Quit_button"
 
 [connection signal="pressed" from="Start_Game_Button" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Quit_Game_Button" to="." method="_on_quit_game_button_pressed"]
