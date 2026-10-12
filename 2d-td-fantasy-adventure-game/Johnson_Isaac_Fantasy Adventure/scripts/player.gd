@@ -6,6 +6,10 @@ extends CharacterBody2D
 var last_direction = "down"
 var is_action_playing = false
 
+signal health_changed(new_health)
+
+var current_health = 100
+
 func _physics_process(delta) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

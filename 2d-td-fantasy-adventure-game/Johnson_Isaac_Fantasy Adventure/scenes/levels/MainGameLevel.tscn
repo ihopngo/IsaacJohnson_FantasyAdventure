@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://vyqwhty74eu" path="res://Johnson_Isaac_Fantasy Adventure/scripts/main_game_level.gd" id="1_52vu7"]
 [ext_resource type="Texture2D" uid="uid://ukq7e8d22bmm" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Backgrounds/BG_08.png" id="1_at5dx"]
 [ext_resource type="AudioStream" uid="uid://cfq1ofpej8trm" path="res://Johnson_Isaac_Fantasy Adventure/assets/audio/jorisvermeer-mysterious-fairytale-journey.mp3" id="3_52vu7"]
+[ext_resource type="PackedScene" uid="uid://ct23xaex84eyj" path="res://Johnson_Isaac_Fantasy Adventure/scenes/characters/player.tscn" id="4_exxj7"]
+[ext_resource type="PackedScene" uid="uid://cwo6jvnyubxdf" path="res://Johnson_Isaac_Fantasy Adventure/scenes/characters/Blob.tscn" id="5_cwo8d"]
 
 [node name="MainGameLevel" type="Node2D" unique_id=1152686869]
 script = ExtResource("1_52vu7")
@@ -15,3 +17,9 @@ texture = ExtResource("1_at5dx")
 [node name="Background_Music" type="AudioStreamPlayer" parent="." unique_id=1322175394]
 stream = ExtResource("3_52vu7")
 volume_db = -10.0
+
+[node name="Blob" parent="." unique_id=1545752107 instance=ExtResource("5_cwo8d")]
+position = Vector2(718, 395)
+
+[node name="Player" parent="." unique_id=1598782154 instance=ExtResource("4_exxj7")]
+position = Vector2(554, 443)

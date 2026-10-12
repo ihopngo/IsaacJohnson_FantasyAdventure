@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bchpr6n0fm2c6" path="res://Johnson_Isaac_Fantasy Adventure/assets/player/Fantasy Adventurer_male_Wizard_SpriteSheet.png" id="1_4gq62"]
 [ext_resource type="Script" uid="uid://bs1vgkdqpn8lk" path="res://Johnson_Isaac_Fantasy Adventure/scripts/player.gd" id="1_ieic6"]
+[ext_resource type="Script" uid="uid://dmr8rxlsto17k" path="res://Johnson_Isaac_Fantasy Adventure/scripts/health_bar.gd" id="3_putbq"]
+[ext_resource type="Script" uid="uid://crworvpnyk26r" path="res://Johnson_Isaac_Fantasy Adventure/scripts/damage_area.gd" id="4_klgir"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gq62"]
 atlas = ExtResource("1_4gq62")
@@ -649,6 +651,10 @@ animations = [{
 radius = 24.0
 height = 80.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpkyb"]
+radius = 23.0
+height = 80.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1598782154]
 script = ExtResource("1_ieic6")
 
@@ -660,4 +666,24 @@ animation = &"idle_down"
 position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_qn41j")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1411282862]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1489113514]
+offset_left = -104.0
+offset_top = -81.0
+offset_right = 104.0
+offset_bottom = -54.0
+script = ExtResource("3_putbq")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=1183844691]
+script = ExtResource("4_klgir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1408464229]
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_lpkyb")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="changed" from="CanvasLayer/ProgressBar" to="." method="_on_progress_bar_changed"]
+[connection signal="changed" from="CanvasLayer/ProgressBar" to="CanvasLayer/ProgressBar" method="_on_changed"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
+[connection signal="body_entered" from="DamageArea" to="DamageArea" method="_on_body_entered"]
