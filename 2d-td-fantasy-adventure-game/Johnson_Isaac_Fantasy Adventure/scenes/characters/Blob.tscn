@@ -60,6 +60,16 @@ region = Rect2(160, 32, 32, 32)
 animations = [{
 "frames": [],
 "loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"chase",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -105,7 +115,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Blob" type="CharacterBody2D" unique_id=1545752107]
+[node name="Blob" type="CharacterBody2D" unique_id=1545752107 groups=["enemies"]]
 script = ExtResource("1_mf5yo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1973935468]
@@ -122,9 +132,8 @@ shape = SubResource("CircleShape2D_8qaey")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=722922679]
 sprite_frames = SubResource("SpriteFrames_lpkyb")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.35591924
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

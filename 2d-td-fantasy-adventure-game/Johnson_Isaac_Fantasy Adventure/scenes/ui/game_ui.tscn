@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dqbdrxx8nqxtg"]
+
+[ext_resource type="Texture2D" uid="uid://bb6hf02tuf0o6" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Health_Bar/health meter-02.png" id="1_3h5pv"]
+[ext_resource type="Texture2D" uid="uid://oiw3e0bxphd7" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Health_Bar/health meter-03.png" id="2_2m162"]
+[ext_resource type="Script" uid="uid://bc8qhhfcvx0co" path="res://Johnson_Isaac_Fantasy Adventure/scripts/player_health_bar.gd" id="3_2m162"]
+
+[node name="GameUI" type="CanvasLayer" unique_id=965347257]
+
+[node name="Control" type="Control" parent="." unique_id=1743670106]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="Control" unique_id=2127653540]
+layout_mode = 0
+offset_right = 648.0
+offset_bottom = 130.0
+scale = Vector2(0.705, 0.705)
+pivot_offset = Vector2(0, 6.93)
+value = 100.0
+texture_under = ExtResource("1_3h5pv")
+texture_progress = ExtResource("2_2m162")
+texture_progress_offset = Vector2(43.455, 42.95)
+script = ExtResource("3_2m162")
