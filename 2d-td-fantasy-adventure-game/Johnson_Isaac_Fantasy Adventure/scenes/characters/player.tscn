@@ -651,29 +651,33 @@ radius = 16.0
 height = 32.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpkyb"]
-radius = 16.0
-height = 32.0
+radius = 18.0
+height = 36.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1598782154 groups=["Player"]]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_ieic6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1327496076]
-position = Vector2(1, 8.276666)
+position = Vector2(3, -23)
 scale = Vector2(0.5766667, 0.5766668)
 sprite_frames = SubResource("SpriteFrames_op1he")
 animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1215456483]
-position = Vector2(-3, 23)
+position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_qn41j")
 
-[node name="DamageArea" type="Area2D" parent="." unique_id=1183844691]
+[node name="PlayerHurtbox" type="Area2D" parent="." unique_id=1183844691 groups=["Player"]]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("4_klgir")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1408464229]
-position = Vector2(-3, 23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtbox" unique_id=1408464229]
+position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_lpkyb")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
-[connection signal="body_entered" from="DamageArea" to="DamageArea" method="_on_body_entered"]
+[connection signal="body_entered" from="PlayerHurtbox" to="." method="_on_damage_area_body_entered"]
+[connection signal="body_entered" from="PlayerHurtbox" to="PlayerHurtbox" method="_on_body_entered"]

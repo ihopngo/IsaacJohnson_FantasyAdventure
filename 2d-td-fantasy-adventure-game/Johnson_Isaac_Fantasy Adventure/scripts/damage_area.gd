@@ -1,9 +1,9 @@
+class_name Hitbox
 extends Area2D
 
-@onready var player = $".."
-var damage_amount = 20
+@export var damage: int = 15
 
-func _on_body_entered(body):
-	if body.is_in_group("enemies"):
-		if player.has_method("take_damage"):
-			player.take_damage(damage_amount)
+func _init() -> void:
+	# Configure this area strictly for offensive scanning
+	monitoring = true
+	monitorable = false
