@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ct23xaex84eyj" path="res://Johnson_Isaac_Fantasy Adventure/scenes/characters/player.tscn" id="4_exxj7"]
 [ext_resource type="PackedScene" uid="uid://cwo6jvnyubxdf" path="res://Johnson_Isaac_Fantasy Adventure/scenes/characters/Blob.tscn" id="5_cwo8d"]
 [ext_resource type="PackedScene" uid="uid://dqbdrxx8nqxtg" path="res://Johnson_Isaac_Fantasy Adventure/scenes/ui/game_ui.tscn" id="6_a5pf1"]
-[ext_resource type="Script" uid="uid://drisp0vuaee30" path="res://Johnson_Isaac_Fantasy Adventure/scripts/Flock.cs" id="7_mrs6i"]
-[ext_resource type="PackedScene" uid="uid://bt36h1ka38mum" path="res://Johnson_Isaac_Fantasy Adventure/scenes/characters/flock_blob.tscn" id="8_8qaey"]
+[ext_resource type="Script" uid="uid://dkb8idiexasx5" path="res://Johnson_Isaac_Fantasy Adventure/scenes/levels/panel.gd" id="7_mrs6i"]
+[ext_resource type="PackedScene" uid="uid://diee2q125hy0s" path="res://Johnson_Isaac_Fantasy Adventure/scenes/items/coin.tscn" id="8_8qaey"]
 
 [node name="MainGameLevel" type="Node2D" unique_id=1152686869]
 script = ExtResource("1_52vu7")
@@ -24,15 +24,42 @@ position = Vector2(554, 443)
 
 [node name="GameUI" parent="." unique_id=965347257 instance=ExtResource("6_a5pf1")]
 
-[node name="Flock" type="Node2D" parent="." unique_id=267127299 node_paths=PackedStringArray("Target")]
-script = ExtResource("7_mrs6i")
-BoidScene = ExtResource("8_8qaey")
-BoidCount = 8
-MaxSpeed = 300.0
-Target = NodePath("../Player")
+[node name="Flock" type="Node2D" parent="." unique_id=267127299]
 
 [node name="LevelBackground" type="Sprite2D" parent="." unique_id=2108290197]
 z_index = -3
 position = Vector2(576, 324)
 scale = Vector2(0.7892157, 0.7892157)
 texture = ExtResource("1_at5dx")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=497850824]
+
+[node name="Minimap" type="Panel" parent="UI" unique_id=663282977 node_paths=PackedStringArray("player")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -172.0
+offset_top = 21.0
+offset_right = -21.0
+offset_bottom = 172.0
+grow_horizontal = 0
+script = ExtResource("7_mrs6i")
+player = NodePath("../../Player")
+
+[node name="Coin" parent="." unique_id=1034010821 instance=ExtResource("8_8qaey")]
+position = Vector2(113, 395)
+
+[node name="Coin3" parent="." unique_id=1848691890 instance=ExtResource("8_8qaey")]
+position = Vector2(277, 606)
+
+[node name="Coin4" parent="." unique_id=1911530750 instance=ExtResource("8_8qaey")]
+position = Vector2(969, 523)
+
+[node name="Coin5" parent="." unique_id=905831263 instance=ExtResource("8_8qaey")]
+position = Vector2(673, 274)
+
+[node name="Coin6" parent="." unique_id=716904492 instance=ExtResource("8_8qaey")]
+position = Vector2(731, 618)
+
+[node name="Coin7" parent="." unique_id=363984690 instance=ExtResource("8_8qaey")]
+position = Vector2(944, 370)

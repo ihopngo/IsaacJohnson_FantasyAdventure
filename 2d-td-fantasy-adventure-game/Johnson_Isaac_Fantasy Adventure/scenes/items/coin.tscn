@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://diee2q125hy0s"]
+
+[ext_resource type="Script" uid="uid://d3g8802j67g4w" path="res://Johnson_Isaac_Fantasy Adventure/scripts/coin.gd" id="1_87gea"]
+[ext_resource type="Texture2D" uid="uid://cvjuydq2e3qpr" path="res://Johnson_Isaac_Fantasy Adventure/assets/art/Coins/40_a.PNG" id="2_tf0eh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpkyb"]
+radius = 12.0
+
+[node name="Coin" type="Area2D" unique_id=1034010821 groups=["coins"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_87gea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=156185966]
+shape = SubResource("CircleShape2D_lpkyb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=268487780]
+scale = Vector2(0.043533325, 0.043533325)
+texture = ExtResource("2_tf0eh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

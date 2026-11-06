@@ -291,7 +291,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Blob" type="CharacterBody2D" unique_id=1545752107 groups=["enemies"]]
+[node name="Blob" type="CharacterBody2D" unique_id=1545752107 groups=["monsters"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_mf5yo")
@@ -299,7 +299,7 @@ script = ExtResource("1_mf5yo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1980102346]
 shape = SubResource("CircleShape2D_a5pf1")
 
-[node name="PlayerDectector" type="Area2D" parent="." unique_id=882232415 groups=["enemies"]]
+[node name="PlayerDectector" type="Area2D" parent="." unique_id=882232415 groups=["monsters"]]
 position = Vector2(1, -5)
 collision_layer = 0
 collision_mask = 2
